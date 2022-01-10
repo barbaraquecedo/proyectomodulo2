@@ -1,27 +1,21 @@
 # proyectomodulo2
 Proyecto 2 [App Web - Express]
-
 Descripción general de la idea: portal de planes para personas +50.
-
 Funcionalidades concretas que queréis que cumpla vuestra plataforma:
 Login/Registro.
 Búsqueda de planes por: Ciudad, intereses y precio.
 Histórico de reservas del usuario.
 Edición del perfil del usuario.
-
 Si nos da tiempo:
 Valoraciones.
 Notificaciones por email del estado de la reserva.
-
 Modelos que vais a necesitar y cómo se relacionan entre ellos:
-
 Usuario:
 Nombre y apellidos
 Email
 Foto*
 Reservas
 Intereses
-
 Planes:
 Nombre
 Localización

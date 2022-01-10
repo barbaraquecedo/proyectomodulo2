@@ -1,0 +1,36 @@
+{
+  "name": "proyectomodulo2",
+  "version": "1.0.0",
+  "description": "Proyecto 2 [App Web - Express]",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -e hbs,js,css,env app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franlopezhack/proyectomodulo2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franlopezhack/proyectomodulo2/issues"
+  },
+  "homepage": "https://github.com/franlopezhack/proyectomodulo2#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "faker": "^6.6.6",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.6",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.2",
+    "pusher": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

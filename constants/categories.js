@@ -1,0 +1,1 @@
+export const categories = ["forest", "branch", "cinema"]

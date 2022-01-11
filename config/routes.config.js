@@ -4,7 +4,7 @@ const misc = require("../controllers/misc.controller")
 
 router.get("/", misc.home);
 
-router.get("/register", auth.register)
+router.get("/register", auth.registeruse)
 
 
 module.exports = router;

@@ -5,8 +5,7 @@ const bcrypt = require("bcryptjs")
 PASSWORD_PATTERN
 EMAIL_PATTERN
 
-
-
+const interests = ["forest", "branch", "cinema"]
 
 const userSchema = new Schema ( {
     name: {
@@ -42,9 +41,14 @@ const userSchema = new Schema ( {
     },
 
     interests:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: plans
+        type: [String],
+        enum: interests
     },
+
+    liked: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Plan'
+    }]
 
 
 }, {timestamps:true})

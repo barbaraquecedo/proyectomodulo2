@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon -e hbs,js,css,env app.js"
+    "dev": "nodemon -e hbs,js,css,env app.js",
+    "seeds": "node ./bin/seeds.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +24,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
-    "faker": "^6.6.6",
-    "hbs": "^4.2.0",
+    "faker": "5.5.3",
     "mongoose": "^6.1.6",
     "morgan": "^1.10.0",
     "nodemailer": "^6.7.2",

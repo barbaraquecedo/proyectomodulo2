@@ -24,7 +24,13 @@ app.use(logger("dev"));
 const routes = require("./config/routes.config");
 app.use("/", routes)
 
-
+app.use((error, req, res, next) => {
+    if (error instanceof mongoose.Error.CastError && error.message.includes('ObjectId')) {
+      next(createError(404, 'Resource not found'));
+    } else {
+      next(error);
+    }
+  })
 
 
 

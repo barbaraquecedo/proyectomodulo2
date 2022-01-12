@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 
-PASSWORD_PATTERN
-EMAIL_PATTERN
+const PASSWORD_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const EMAIL_PATTERN = /.{8,}/;
 
 const interests = ["forest", "branch", "cinema"]
 

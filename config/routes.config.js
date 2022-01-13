@@ -6,7 +6,7 @@ const auth = require("../controllers/auth.controller")
 router.get("/", misc.home);
 
 router.get("/register", auth.register)
-//router.post("/register", auth.doRegister)
+router.post("/register", auth.doRegister)
 
 
 

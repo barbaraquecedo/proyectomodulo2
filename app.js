@@ -19,6 +19,7 @@ app.set("views", `${__dirname}/views`);
 
 /**Middlewares */
 app.use(express.static(`${__dirname}/public`));
+app.use(express.urlencoded({extended: false}));
 app.use(logger("dev"));
 
 const routes = require("./config/routes.config");

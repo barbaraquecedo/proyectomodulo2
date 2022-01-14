@@ -4,23 +4,25 @@ const bcrypt = require("bcryptjs");
 
 const PASSWORD_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const EMAIL_PATTERN = /.{8,}/;
+const SALT_WORK_FACTOR = 10;
+
 
 const interests = ["forest", "branch", "cinema"]
 
 const userSchema = new Schema ( {
     name: {
         type: String,
-        require: [true, "Name is required"],
+        required: [true, "Name is required"],
     },
     
     surname: {
         type: String,
-        require: [true, "surname is required"]
+        required: [true, "surname is required"]
     },
 
     email:{
         type: String,
-        require: [true, "email is reuquired"],
+        required: [true, "email is reuquired"],
         match: [EMAIL_PATTERN,  "email is not valid"],
         trim: true,
         lowercase: true,
@@ -29,7 +31,7 @@ const userSchema = new Schema ( {
 
     password:{
         type: String,
-        require: true,
+        required: true,
         trim: true,
         match: [PASSWORD_PATTERN, "password needs at least 8 characters"]
 
@@ -54,7 +56,24 @@ const userSchema = new Schema ( {
 }, {timestamps:true})
 
 
+userSchema.pre('save', function(next) {
+    const user = this;
 
+    if(user.isModified('password')) {
+        bcrypt.hash(user.password, SALT_WORK_FACTOR)
+        .then(hash => {
+            user.password = hash;
+            next();
+        })
+        .catch(error => next(error))
+    }else{
+        next()
+    }
+})
+
+userSchema.methods.checkPassword = function (passwordToCheck) {
+    return bcrypt.compare(passwordToCheck, this.password)
+}
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;

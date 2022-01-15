@@ -11,7 +11,6 @@ module.exports.register = (req, res, next) => {
 
 module.exports.doRegister = (req, res, next) => {
     function renderWithErrors(errors) {
-        console.log('pasando errores: ', errors)
         res.render("auth/register", {
             errors: errors,
             user: req.body
@@ -21,8 +20,10 @@ module.exports.doRegister = (req, res, next) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
             if (!user) {
+                console.log('entro en then del find', req.body)
                 return User.create(req.body)
                     .then(() => {
+                        console.log('entro en then de create')
                         res.redirect("/login")
                     })
             } else {
@@ -30,7 +31,9 @@ module.exports.doRegister = (req, res, next) => {
             }
         })
         .catch((error) => {
+            console.log('entro en catch', error)
             if (error instanceof mongoose.Error.ValidationError) {
+                console.log(error)
                 renderWithErrors(error.errors)
             } else {
                 next(error)
@@ -45,10 +48,10 @@ module.exports.login = (req, res, next) => {
 
 module.exports.doLogin = (req, res, next) => {
     function renderWithErrors(errors) {
-        res.render("auth/login"), {
+        res.render("auth/login", {
             errors: errors,
             user: req.body
-        }
+        })
     }
     const { email, password} = req.body
     User.findOne({email})

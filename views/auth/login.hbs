@@ -1,3 +1,31 @@
+
+{{errors}}
 <h1>LOGIN</h1>
 
-    
+ <div class="container">
+    <form action="/login" method="post">
+        <div class="col-xs-4 col-xs-offset-4">
+            <label class="form-label">Email</label>
+            <div class="input-group mb-1">
+                <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+                <input type="text" class="form-control {{#if errors.email}}is-invalid{{/if}}" name="email" value="{{ user.email }}"
+                    placeholder="example@gmail.com" />
+                <div class="invalid-feedback">{{ errors.email }}</div>
+            </div>
+        </div>
+        <div class="col-xs-4 col-xs-offset-4">
+            <label class="form-label">Contrasena</label>
+            <div class="input-group mb-1">
+                <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+                <input type="text" class="form-control {{#if errors.password}}is-invalid{{/if}}" name="password"
+                    placeholder="password" />
+                <div class="invalid-feedback">{{ errors.password }}</div>
+            </div>
+        </div>
+        <div class="mb-3 d-grid"></div>
+                      <hr>
+                    <button type="submit" class="btn btn-primary text-uppercase btn-sm">Iniciar sesión</button>
+                    
+        </div>
+    </form>
+</div>   

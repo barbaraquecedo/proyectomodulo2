@@ -2,8 +2,8 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
 
-const PASSWORD_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const EMAIL_PATTERN = /.{8,}/;
+const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const PASSWORD_PATTERN = /.{8,}/;
 const SALT_WORK_FACTOR = 10;
 
 
@@ -16,8 +16,8 @@ const userSchema = new Schema ( {
     },
     
     surname: {
-        type: String,
-        required: [true, "surname is required"]
+        type: String
+       // required: [true, "surname is required"]
     },
 
     email:{

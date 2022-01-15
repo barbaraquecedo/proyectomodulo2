@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const interests = ["forest", "brunch", "cinema"];
+const interests = ["forest", "brunch", "cinema", "city"];
 
 
 const planSchema = new Schema ({
@@ -17,7 +17,8 @@ const planSchema = new Schema ({
 
     image: {
         type: String,
-        require: [true, 'An image is required']
+        //require: [true, 'An image is required']
+        default:'https://picsum.photos/300/?blur'
     },
 
     interests: {

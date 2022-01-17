@@ -47,28 +47,35 @@ module.exports.login = (req, res, next) => {
 
 
 module.exports.doLogin = (req, res, next) => {
-    function renderWithErrors(errors) {
+    function renderWithErrors() {
         res.render("auth/login", {
-            errors: errors,
-            user: req.body
+            user: req.body,
+            erros: { password: 'email or password incorrect' }
         })
     }
-    const { email, password} = req.body
-    User.findOne({email})
-    .then((user) => {
-        if(!user){
-            renderWithErrors()
-        }else{
-            return user.checkPassword(password)
-                .then(match => {
-                    if(!match){
-                        renderWithErrors()
-                    }else{
-                        req.session.userId = user.id
-                        res.redirect("/")
-                    }
-                })
-        }
-    })
-    .catch(error => next(error))
+    const { email, password } = req.body
+    User.findOne({ email })
+        .then((user) => {
+            if (!user) {
+                renderWithErrors()
+            } else {
+                return user.checkPassword(password)
+                    .then(match => {
+                        console.log('entro en el then del match', req.body)
+                        if (!match) {
+                            renderWithErrors()
+                        } else {
+                            req.session.userId = user.id
+                            res.redirect("/")
+                        }
+                    })
+            }
+        })
+        .catch(error => next(error))
+    console.log('error', req.next)
+}
+
+module.exports.logout = (req, res, next) => {
+    req.session.destroy();
+    res.redirect("/");
 }

@@ -9,27 +9,27 @@ const SALT_WORK_FACTOR = 10;
 
 const interests = ["forest", "branch", "cinema"]
 
-const userSchema = new Schema ( {
+const userSchema = new Schema({
     name: {
         type: String,
         required: [true, "Name is required"],
     },
-    
+
     surname: {
         type: String
-       // required: [true, "surname is required"]
+        // required: [true, "surname is required"]
     },
 
-    email:{
+    email: {
         type: String,
         required: [true, "email is reuquired"],
-        match: [EMAIL_PATTERN,  "email is not valid"],
+        match: [EMAIL_PATTERN, "email is not valid"],
         trim: true,
         lowercase: true,
         unique: true
     },
 
-    password:{
+    password: {
         type: String,
         required: true,
         trim: true,
@@ -37,12 +37,12 @@ const userSchema = new Schema ( {
 
     },
 
-    avatarUrl:{
+    avatarUrl: {
         type: String,
-        default:"https://i.pravatar.cc/300",
+        default: "https://i.pravatar.cc/300",
     },
 
-    interests:{
+    interests: {
         type: [String],
         enum: interests
     },
@@ -53,20 +53,20 @@ const userSchema = new Schema ( {
     }]
 
 
-}, {timestamps:true})
+}, { timestamps: true })
 
 
-userSchema.pre('save', function(next) {
+userSchema.pre('save', function (next) {
     const user = this;
 
-    if(user.isModified('password')) {
+    if (user.isModified('password')) {
         bcrypt.hash(user.password, SALT_WORK_FACTOR)
-        .then(hash => {
-            user.password = hash;
-            next();
-        })
-        .catch(error => next(error))
-    }else{
+            .then(hash => {
+                user.password = hash;
+                next();
+            })
+            .catch(error => next(error))
+    } else {
         next()
     }
 })

@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 //const { sendVerificationEmail } = require("./mailer.config");
 
 
-
 module.exports.register = (req, res, next) => {
     res.render('auth/register')
 }
@@ -65,7 +64,7 @@ module.exports.doLogin = (req, res, next) => {
                         if (!match) {
                             renderWithErrors()
                         } else {
-                            req.session.userId = user.id
+                            req.session.userId = user.id //  usuario logado
                             res.redirect("/")
                         }
                     })

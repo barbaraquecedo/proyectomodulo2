@@ -25,7 +25,8 @@ app.use(express.static(`${__dirname}/public`));
 app.use(express.urlencoded({extended: false}));
 app.use(logger("dev"));
 app.use(session);
-app.use(loadUser)
+app.use(loadUser);
+
 
 const routes = require("./config/routes.config");
 app.use("/", routes)

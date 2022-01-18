@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const interests = ["forest", "brunch", "cinema", "city"];
-
+const categories = require('./../constants/categories')
+console.log(categories)
 
 const planSchema = new Schema ({
     title: {
@@ -23,7 +23,7 @@ const planSchema = new Schema ({
 
     interests: {
         type: [String],
-        enum: interests
+        enum: categories
     },
 
     rating: {

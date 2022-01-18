@@ -1,1 +1,1 @@
-export const categories = ["forest", "branch", "cinema"]
+module.exports = ["forest", "brunch", "cinema", "city"]

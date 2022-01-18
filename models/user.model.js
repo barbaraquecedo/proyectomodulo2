@@ -15,6 +15,11 @@ const userSchema = new Schema({
         required: [true, "Name is required"],
     },
 
+    administrator : {
+        type: Boolean,
+        default: false
+    },
+
     surname: {
         type: String
         // required: [true, "surname is required"]

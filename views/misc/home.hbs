@@ -1,5 +1,33 @@
-<h1>HOME</h1>
-<a href="/register">REGISTER</a>
+<div class="hero d-flex">
+    <div>
+        <h1> Bienvenide a nuestro proyecto 2</h1>
+        <p class="text-center">Busca tos planes favoritos y encuentra los que encajan con tu ritmo de vida</p>
+
+    </div>
+
+</div>
 
 
+<div class="container mt-5 ">
+    <h1 class="mt-5 mb-5 font-weight-bold">Descubre nuestra oferta</h1>
+    <div class="row">
+        {{#each plans as |plan|}}
+            <div class="custom-card col-xl-4 col-md-4 col-sm-6 col-xs-12  mb-4">
+                <div class="shadow-custom-card">
+                    <div style="background-image: url('{{plan.image}}')" class="custom-card-img-top" alt="...">
+                        <div class="like-button-div">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="card-body custom-card-body">
+                        <h5 class="card-title">{{ plan.title }}</h5>
+                        <p class="card-text">short description for plan</p>
+                        <a href="/plans/{{ plan.id }}" class="btn btn-primary">VER MAS...</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
 
+
+</div>

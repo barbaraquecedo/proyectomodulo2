@@ -11,7 +11,7 @@ module.exports.list = (req, res, next) => {
 
     Plans.find()
         .then((plans) => {
-            res.render("plans/list", { plans })
+            res.render("misc/home", { plans })
         })
         .catch((error) => {
             next(error)
@@ -32,12 +32,4 @@ module.exports.detail = (req, res, next) => {
         .catch((error) => next(error))
 }
 
-
-// module.exports.detail = (req, res, next) => {
-//     Plans.findById(req.params.id)
-//         .then((plan) => {
-//             res.render("plans/detail", { plan })
-//         })
-//         .catch((error) => next(error))
-// }
 

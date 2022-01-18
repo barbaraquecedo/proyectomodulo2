@@ -1,16 +1,1 @@
 
-<div class="container d-flex row mt-4 ">
-    {{#each plans as |plan|}}
-  
- <div class="card mb-4 me-2" style="width: 18rem;">
-        <img src="{{ plan.image }}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ plan.title }}</h5>
-            <p class="card-text">{{ plan.description }}</p>
-            <a href="/plans/{{ plan.id }}" class="btn btn-primary">VER MAS...</a>
-        </div>
-    </div>
- 
-    {{/each}}
-
-</div>

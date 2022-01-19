@@ -1,3 +1,5 @@
+const createError = require('http-errors')
+
 module.exports.isAuthenticated = (req, res, next) => {
     if (req.user) {
         next()
@@ -10,6 +12,6 @@ module.exports.isAdmin = (req, res, next) => {
     if (req.user.admin) {
         next()
     } else {
-        res.redirect('/')
+        next(createError(403, 'you are not an admin'))
     }
 }

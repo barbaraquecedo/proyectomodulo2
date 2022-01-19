@@ -45,6 +45,7 @@ const planSchema = new Schema ({
         require: [true, 'A date is required']
     },
 
+    // revisar
     time: {
         type: {
             hours: {

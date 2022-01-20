@@ -1,7 +1,7 @@
 
 const Plans = require("../models/plan.model");
 const mongoose = require("mongoose");
-const createError = ("http-errors");
+const createError = require("http-errors");
 
 module.exports.admin = (req, res, next) => {
     res.send('solo los administradores tienen acceso')

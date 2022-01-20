@@ -17,7 +17,7 @@ Plan.deleteMany({})
 
         const plan = new Plan({
             title: faker.name.findName(),
-            description: faker.lorem.sentences(5),
+            description: faker.lorem.paragraphs(),
             image: `https://picsum.photos/id/${randomArrId}/200/300`,
             interests: ["city"],
             rating: randomRating,
@@ -45,7 +45,7 @@ Plan.deleteMany({})
         console.log(randomArrId)
         const plan = new Plan({
             title: faker.name.findName(),
-            description: faker.lorem.sentences(5),
+            description: faker.lorem.paragraphs(),
             image: `https://picsum.photos/id/${randomArrId}/200/300`,
             interests: ["forest"],
             rating: randomRating,
@@ -73,7 +73,7 @@ Plan.deleteMany({})
         console.log(randomArrId)
         const plan = new Plan({
             title: faker.name.findName(),
-            description: faker.lorem.sentences(5),
+            description: faker.lorem.paragraphs(),
             image: `https://picsum.photos/id/${randomArrId}/200/300`,
             interests: ["forest"],
             rating: randomRating,
@@ -100,7 +100,7 @@ Plan.deleteMany({})
         console.log(randomArrId)
         const plan = new Plan({
             title: faker.name.findName(),
-            description: faker.lorem.sentences(5),
+            description: faker.lorem.paragraphs(),
             image: `https://picsum.photos/id/${randomArrId}/200/300`,
             interests: ["forest"],
             rating: randomRating,

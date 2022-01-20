@@ -59,5 +59,62 @@
 }
 
 .like-button-div i {
-    font-size: 24px;
+    font-size: 23px;
+}
+
+
+.bg-image{
+    background-color: rgb(44, 43, 43);
+    height: calc(100vh - 800px);
+    max-height: 600px;
+    min-height: 300px;
+    width: 100%;
+    z-index: -1;
+    
+
+}
+
+
+.btn{
+    background-color: rgb(8, 105, 45);
+    color: white;
+}
+
+.card-detail {
+    -webkit-box-shadow: 1px 3px 15px -1px rgba(0, 0, 0, 0.2); 
+    box-shadow: 1px 3px 15px -1px rgba(0,0,0,0.2);
+    margin-top: -190px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.card-detail-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+#card-detail-container{
+    height: 400px;
+}
+
+.card-detail-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #ebebeb;
+}
+
+.card-detail-date{
+    background-color: white;
+    padding: 21px 17px;
+    font-size: 19px;
+    border-radius: 9px;
+    color: #9d9d9d;
+    -webkit-box-shadow: 0px 0px 8px -2px rgb(0 0 0 / 20%);
+    box-shadow: 0px 0px 8px -2px rgb(0 0 0 / 20%);
 }

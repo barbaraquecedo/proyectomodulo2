@@ -1,3 +1,4 @@
+
 #main-nav {
     background-color: turquoise !important;
 }
@@ -63,8 +64,8 @@
 
 
 .bg-image {
-    background-color: rgb(44, 43, 43);
-    height: calc(100vh - 800px);
+    background-image:linear-gradient(#40e0d0, #e4eff0);
+    height: calc(100vh - 400px);
     max-height: 600px;
     min-height: 300px;
     width: 100%;
@@ -74,16 +75,10 @@
 }
 
 
-.btn {
-    background-color: rgb(8, 105, 45);
-    color: white;
-
-}
-
 .card-detail {
     -webkit-box-shadow: 1px 3px 15px -1px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 3px 15px -1px rgba(0, 0, 0, 0.2);
-    margin-top: -190px;
+    margin-top: -400px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -98,7 +93,7 @@
 }
 
 #card-detail-container {
-    height: 400px;
+    height: 500px;
 }
 
 .card-detail-info {
@@ -127,9 +122,24 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 400px;
+    bottom: 415px;
     right: inherit;
     border-radius: 100px;
+}
+
+.card-detail-like-btn i {
+    font-size: 23px;
+    color: red;
+}
+
+.card-detail-ticket-btn{
+
+}
+
+.btn {
+    font-size: 30px;
+    background-color: #40e0d0;
+    color: white;
 }
 
 #card-detail-container-text {
@@ -137,15 +147,6 @@
     background-color: ;
 }
 
-
-.card-detail-like-btn i {
-    font-size: 23px;
-    color: red;
-}
-
-.card-detail-ticket-btn button {
-    font-size: 30px;
-}
 
 .card-text-info {
     padding: 0px 252px 200px 20px;
@@ -160,16 +161,16 @@
 
 .card-info {
     display: flex;
-    bottom: ;
+   
 }
 
 .info-date {
-    font-size: 25px;
+    font-size: 30px;
 }
 
-
-
-
+.info-location {
+    font-size: 30px;
+}
 
 #card-general-info {
     margin-top: -5rem;

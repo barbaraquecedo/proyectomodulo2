@@ -19,27 +19,38 @@
 
 
     <div class="d-flex justify-content-between mt-5 px-4">
-      <div>
+      <div class="card-detail-like-btn">
         <i class="fa fa-heart"></i>
       </div>
-      <div>
+      <div class="card-detail-ticket-btn">
         <button class="btn">Entradas</button>
       </div>
     </div>
-
-    <div class="d-flex mt-5">
-      <div>
+    <hr>
+    <div class="d-flex mt-5" id="card-detail-container-text">
+      <div class="card-text-info col-8">
         <p>{{plan.description}}</p>
       </div>
-      <div>
-        <div>
-          <h1>HORA</h1>
+
+      <div class="col-4" id="card-general-info">
+        <div class="card-info-date">
+          <div>
+            <h1 class="mt-5">Fecha y hora</h1>
+          </div>
+          <div class="info-date">
+            <small class="">{{#formatFullDate plan.date}} {{/formatFullDate}}</small>
+          </div>
+          <div class="card-detail-info-hour">
+            HORA
+          </div>
         </div>
-        <div>
-          <h1>Ubicación</h1>
-        </div>
-        <div>
-          <h1>{{plan.location}}</h1>
+        <div class="card-info-location">
+          <div>
+            <h1 class="mt-5">Ubicación</h1>
+          </div>
+          <div class="info-location">
+            <small>{{plan.location}}</small>
+          </div>
         </div>
       </div>
     </div>

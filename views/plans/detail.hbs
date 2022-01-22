@@ -10,9 +10,11 @@
   <div class="card-detail">
     <div class="row" id="card-detail-container">
       <div class="card-detail-image col-8" style="background-image: url('{{plan.image}}')" alt="image">
+        {{#if currentUser}}
         <div class="card-detail-like-btn">
-          <i class="fa fa-heart"></i>
+          <i class="fa fa-heart text-danger"></i>
         </div>
+        {{/if}}
       </div>
       <div class="card-detail-info col-4">
         <div class="mt-3">

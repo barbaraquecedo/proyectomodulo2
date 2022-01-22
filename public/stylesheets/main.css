@@ -1,3 +1,6 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 
 #main-nav {
     background-color: turquoise !important;
@@ -64,14 +67,22 @@
 
 
 .bg-image {
-    background-image:linear-gradient(#050505, #e4eff0);
+    filter: blur(8px) brightness(45%) saturate(47%) opacity(64%) drop-shadow(0px 0px 10px #000000);
+    -webkit-filter: blur(8px) brightness(45%) saturate(47%) opacity(64%) drop-shadow(0px 0px 10px #000000);
+    -moz-filter: blur(8px) brightness(45%) saturate(47%) opacity(64%) drop-shadow(0px 0px 10px #000000);
     height: calc(100vh - 400px);
     max-height: 600px;
     min-height: 300px;
     width: 100%;
     z-index: -1;
-
-
+    position: relative;
+    overflow: hidden;
+    width: 110%;
+    margin-left: -20px;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
+    margin-top: -20px;
 }
 
 
@@ -88,7 +99,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+    position: relative;
 
 }
 
@@ -105,35 +116,29 @@
 }
 
 .card-detail-date {
-    background-color: white;
-    padding: 21px 17px;
     font-size: 19px;
-    border-radius: 9px;
     color: #9d9d9d;
-    -webkit-box-shadow: 0px 0px 8px -2px rgb(0 0 0 / 20%);
-    box-shadow: 0px 0px 8px -2px rgb(0 0 0 / 20%);
 }
 
 .card-detail-like-btn {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 415px;
+    bottom: -50px;
+    left: 43px;
+    font-size: 61px;
     right: inherit;
     border-radius: 100px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset;
 }
 
 .card-detail-like-btn i {
-    font-size: 23px;
+    font-size: 43px;
     color: red;
-}
-
-.card-detail-ticket-btn{
-
 }
 
 .btn {
@@ -144,13 +149,11 @@
 
 #card-detail-container-text {
     height: 600px;
-    background-color: ;
 }
 
 
 .card-text-info {
-    padding: 0px 252px 200px 20px;
-
+    padding: 10px 45px;
 }
 
 .card-text-info p {
@@ -161,7 +164,7 @@
 
 .card-info {
     display: flex;
-   
+
 }
 
 .info-date {
@@ -172,11 +175,28 @@
     font-size: 30px;
 }
 
-#card-general-info {
-    margin-top: -5rem;
-    padding: 30px;
+.card-detail-info > p {
+    font-size: 30px;
 }
 
-#card-detail-container-text  h1 {
-   font-weight: 400px ;
+#card-detail-container-text h1 {
+    font-weight: 400px;
+}
+
+.header-image {
+    border-bottom: 10px solid white;
+    overflow: hidden;
+}
+
+.image-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    height: calc(100vh - 400px);
+    max-height: 600px;
+    min-height: 300px;
+    position: absolute;
+    opacity: 0.5;
+    z-index: -1;
+    margin-top: -20px;
 }

@@ -20,6 +20,7 @@ Plan.deleteMany({})
             description: faker.lorem.paragraphs(),
             image: `https://picsum.photos/id/${randomArrId}/200/300`,
             interests: ["city"],
+            keyWords:  ["#Madrid", "#copas", "#tapas"],
             rating: randomRating,
             location: faker.address.streetAddress(),
             price: 100,

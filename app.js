@@ -12,7 +12,7 @@ const app = express();
 /** Configs */
 require("./config/hbs.config")
 require("./config/db.config")
-const {session, loadUser} = require("./config/session.config");
+const { session, loadUser } = require("./config/session.config");
 
 
 

@@ -53,6 +53,7 @@ module.exports.doLogin = (req, res, next) => {
         })
     }
     const { email, password } = req.body
+
     User.findOne({ email })
         .then((user) => {
             if (!user) {
@@ -60,18 +61,18 @@ module.exports.doLogin = (req, res, next) => {
             } else {
                 return user.checkPassword(password)
                     .then(match => {
-                        console.log('entro en el then del match', req.body)
+
                         if (!match) {
+                            console.log('ESTA MAL LA CONTRASEÑA FRAN, TE MATO!')
                             renderWithErrors()
                         } else {
-                            req.session.userId = user.id //  usuario logado
+                            req.session.userId = user.id//  usuario logado
                             res.redirect("/")
                         }
                     })
             }
         })
         .catch(error => next(error))
-    console.log('error', req.next)
 }
 
 module.exports.logout = (req, res, next) => {

@@ -1,60 +1,40 @@
-<div class="bg-image"></div>
+<div class="header-image">
+  <div class="image-overlay">
+  </div>
+
+  <div class="bg-image" style="background-image: url('{{plan.image}}')">
+  </div>
+</div>
 
 <div class="container mt-5">
   <div class="card-detail">
-    <div class="row  m-0" id="card-detail-container">
-      <div class="card-detail-image col-8" style="background-image: url('{{plan.image}}')" alt="image"></div>
+    <div class="row" id="card-detail-container">
+      <div class="card-detail-image col-8" style="background-image: url('{{plan.image}}')" alt="image">
+        <div class="card-detail-like-btn">
+          <i class="fa fa-heart"></i>
+        </div>
+      </div>
       <div class="card-detail-info col-4">
-        <div class="card-detail-info-misc mt-3">
+        <div class="mt-3">
           <small class="card-detail-date">{{#formatDate plan.date}} {{/formatDate}}</small>
           <h1 class="mt-4">{{plan.title}}</h1>
         </div>
-        <div class="card-detail-info-price">
-          <small>{{plan.price}}€</small>
-        </div>
+        <p class="m-0">{{plan.price}}€</p>
       </div>
     </div>
 
-
-    <div class="mt-5 px-4">
-      <div class="card-detail-like-btn">
-        <i class="fa fa-heart"></i>
-      </div>
-      <div align="right">
-        <button class="btn">ENTRADAS</button>
-      </div>
-    </div>
-    <hr>
-    <div class="d-flex mt-5" id="card-detail-container-text">
+    <div class="row mt-5" id="card-detail-container-text">
       <div class="card-text-info col-8">
         <p>{{plan.description}}</p>
       </div>
-
-      <div class="col-4" id="card-general-info">
-        <div class="card-info-date">
-          <div>
-            <h1 class="mt-5">Fecha y hora</h1>
-          </div>
-          <div class="info-date">
-            <small class="">{{#formatFullDate plan.date}} {{/formatFullDate}}</small>
-          </div>
-          <div class="card-detail-info-hour">
-            HORA
-          </div>
-        </div>
-        <div class="card-info-location">
-          <div>
-            <h1 class="mt-5">Ubicación</h1>
-          </div>
-          <div class="info-location">
-            <small>{{plan.location}}</small>
-          </div>
-        </div>
+      <div class="col-4">
+        <h4 class="mt-0">Fecha y hora</h4>
+        <p class="mb-0"><i class="fa fa-calendar fa-fw me-1"></i>{{#formatFullDate plan.date}} {{/formatFullDate}}</p>
+        <p class="mb-0"><i class="fa fa-clock-o fa-fw me-1"></i>{{plan.time.hours}}:{{plan.time.minutes}}</p>
+        <h4 class="mt-3">Ubicación</h4>
+        <p class="mb-0"><i class="fa fa-map fa-fw me-1"></i>{{plan.location}}</p>
       </div>
     </div>
-
-
-
   </div>
 
 </div>

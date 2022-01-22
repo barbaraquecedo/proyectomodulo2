@@ -18,7 +18,7 @@
                     {{#if ../currentUser}}
                     <div class="like-button-div">
                         <form action="/plans/{{plan.id}}/likes" method="post">
-                            <button class="btn-unstylled" type="submit"><i class="fa fa-heart"></i></button>
+                            <button class="btn-unstylled" type="submit"><i class="fa fa-heart {{userLikes ../currentUser plan}}  "></i></button>
                         </form>
                     </div>
                     {{/if}}
@@ -32,6 +32,4 @@
         </div>
         {{/each}}
     </div>
-
-
 </div>

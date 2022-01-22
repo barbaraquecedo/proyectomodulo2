@@ -42,15 +42,7 @@ module.exports.doLike = (req, res, next) => {
             } else {
                 return User.findByIdAndUpdate(
                     req.user.id, 
-                    { 
-                        //$addToSet: { likes: plan.id }
-                        //$pull: { likes: plan.id }
-                        // $cond: { 
-                        //     //if: { likes: { $in: [ plan.id ] }},
-                        //     if: true,
-                        //     then: { $pull: { likes: plan.id }},
-                        //     else: { $addToSet: { likes: plan.id }}
-                        // }
+                    [{ 
                         $set: { 
                             likes: {
                                 $cond: { 
@@ -61,7 +53,7 @@ module.exports.doLike = (req, res, next) => {
 
                             }
                         }
-                    }, 
+                    }], 
                     { runValidators: true,  new: true } 
                 )
                 .then(user => {

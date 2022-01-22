@@ -12,6 +12,10 @@ hbs.registerHelper('formatFullDate', (date, options) => {
 })
 
 
-hbs.registerHelper('userLikes', (date, options) => {
-  
+hbs.registerHelper('userLikes', (user, plan) => {
+  if(user.likes.includes(plan.id)){
+    return "text-danger"
+  } else {
+    return ""
+  }
 })

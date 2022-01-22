@@ -64,7 +64,7 @@
 
 
 .bg-image {
-    background-image:linear-gradient(#40e0d0, #e4eff0);
+    background-image:linear-gradient(#050505, #e4eff0);
     height: calc(100vh - 400px);
     max-height: 600px;
     min-height: 300px;

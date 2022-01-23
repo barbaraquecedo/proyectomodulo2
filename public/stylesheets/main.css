@@ -175,7 +175,7 @@ body {
     font-size: 30px;
 }
 
-.card-detail-info > p {
+.card-detail-info>p {
     font-size: 30px;
 }
 
@@ -200,3 +200,4 @@ body {
     z-index: -1;
     margin-top: -20px;
 }
+

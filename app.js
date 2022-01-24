@@ -33,6 +33,7 @@ app.use("/", routes)
 
 app.use((error, req, res, next) => {
     if (error instanceof mongoose.Error.CastError && error.message.includes('ObjectId')) {
+      console.error(error)
       next(createError(404, 'Resource not found'));
     } else {
       next(error);

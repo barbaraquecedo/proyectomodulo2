@@ -138,7 +138,6 @@ body {
 
 .card-detail-like-btn i {
     font-size: 43px;
-    color: red;
 }
 
 .btn {
@@ -201,3 +200,9 @@ body {
     margin-top: -20px;
 }
 
+.btn-unstylled {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+}

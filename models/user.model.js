@@ -52,7 +52,7 @@ const userSchema = new Schema({
         enum: interests
     },
 
-    liked: [{
+    likes: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Plan'
     }]

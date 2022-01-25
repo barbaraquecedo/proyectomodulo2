@@ -19,6 +19,7 @@ module.exports.doRegister = (req, res, next) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
             if (!user) {
+                
                 console.log('entro en then del find', req.body)
                 return User.create(req.body)
                     .then(() => {

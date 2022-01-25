@@ -19,3 +19,4 @@ hbs.registerHelper('userLikes', (user, plan) => {
     return ""
   }
 })
+

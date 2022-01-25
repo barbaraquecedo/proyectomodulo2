@@ -1,2 +1,12 @@
 <h1>profile</h1>
 
+<img src= {{user.avatarUrl}} alt='avatarillo'>
+<h2> {{user.name}} </h2>
+<ul>
+{{#each users as |likes|}}
+       <li> {{likes}}: {{likes}}  
+
+       </li> 
+    
+{{/each}}
+</ul>

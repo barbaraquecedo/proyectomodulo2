@@ -4,7 +4,8 @@ const createError = require('http-errors');
 
 
 module.exports.profile = (req, res, next) => {
-    User.findOne(req.body) 
+    User.findById(req.user.id)
+    .populate('likes')
     .then((user) => {
         if (user) { 
             res.render('users/profile', {user})

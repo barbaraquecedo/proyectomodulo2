@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const categories = require('./../constants/categories')
+const categories = require('../constants/interests')
 console.log(categories)
 
 const planSchema = new Schema ({
@@ -45,20 +45,10 @@ const planSchema = new Schema ({
         require: [true, 'A date is required']
     },
 
-    // revisar
+
     time: {
-        type: {
-            hours: {
-                type: Number,
-                require: true
-            },
-
-            minutes: {
-                type: Number,
-                require: true
-            }
-        }
-
+        type: String,
+        require: [true, 'A time is required'] 
     }
 
 }, { timestamps:true })

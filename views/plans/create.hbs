@@ -1,0 +1,74 @@
+<h1>hola</h1>
+<div class="container">
+    <form action="/plans/create" method="post">
+        <div class="col-xs-4 col-xs-offset-4">
+            <label class="form-label">Titulo</label>
+            <div class="input-group mb-1">
+                <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+                <input type="text" class="form-control {{#if errors.title}}is-invalid{{/if}}" name="title"
+                    value="{{ plan.title }}" placeholder="Domingos de salsa" />
+                <div class="invalid-feedback">{{ errors.title }}</div>
+            </div>
+            <div class="col-xs-4 col-xs-offset-4">
+                <label class="form-label">Descripcion</label>
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-book fa-fw"></i></span>
+                    <input type="text" class="form-control {{#if errors.description}}is-invalid{{/if}}"
+                        name="description" value="{{ plan.description }}" placeholder="Pepito" />
+                    <div class="invalid-feedback">{{ errors.description }}</div>
+                </div>
+                <div class="col-xs-4 col-xs-offset-4">
+                    <label class="form-label">Imagen</label>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-photo fa-fw"></i></span>
+                        <input type="file" class="form-control {{#if errors.image}}is-invalid{{/if}}" name="image"
+                            value="{{ plan.image }}" placeholder="Pepito" />
+                        <div class="invalid-feedback">{{ errors.image }}</div>
+                    </div>
+                    <label class="form-label">Intereses</label>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-heart fa-fw"></i></span>
+                            {{#each interests as |interest|}}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="{{interest}}" name="{{interest}}" id="flexCheckChecked" >
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        {{interest}}
+                                    </label>
+                                </div>     
+                            {{/each}}
+                            <div class="invalid-feedback">{{ errors.interests }}</div>
+
+                    </div>
+                    <label class="form-label">Localizacion</label>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-map fa-fw"></i></span>
+                        <input type="text" class="form-control {{#if errors.location}}is-invalid{{/if}}" name="location"
+                            value="{{ plan.location }}" placeholder="Madrid" />
+                        <div class="invalid-feedback">{{ errors.location }}</div>
+                    </div>
+                    <label class="form-label">Precio</label>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-money fa-fw"></i></span>
+                        <input type="text" class="form-control {{#if errors.price}}is-invalid{{/if}}" name="price"
+                            value="{{ plan.price }}" placeholder="5$" />
+                        <div class="invalid-feedback">{{ errors.price }}</div>
+                    </div>
+                    <label class="form-label">Fecha</label>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-calendar fa-fw"></i></span>
+                        <input type="text" class="form-control {{#if errors.date}}is-invalid{{/if}}" name="date"
+                            value="{{ plan.date }}" placeholder="01/01/2001" />
+                        <div class="invalid-feedback">{{ errors.date }}</div>
+                    </div>
+                    <label class="form-label">Hora</label>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-clock-o fa-fw"></i></span>
+                        <input type="time" class="form-control {{#if errors.time}}is-invalid{{/if}}" name="time"
+                            value="{{ plan.time }}" placeholder="10:00" />
+                        <div class="invalid-feedback">{{ errors.time }}</div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary"> Crear plan </button>
+                    </div>
+    </form>
+</div>

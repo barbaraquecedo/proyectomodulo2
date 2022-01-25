@@ -8,7 +8,6 @@ const secure = require("../middlewares/security.mid");
 
 router.get("/", misc.home);
 
-router.get("/plans/:id", plans.detail);
 
 router.get("/users/:id", users.profile);
 
@@ -18,10 +17,12 @@ router.get("/register", auth.register);
 router.post("/register", auth.doRegister);
 router.get("/login", auth.login);
 router.post("/login", auth.doLogin);
-router.get("/logout", auth.logout)
+router.get("/logout", auth.logout);
 
+router.get("/plans/create", plans.create);
+router.post('/plans/create', plans.doCreate);
+router.get("/plans/:id", plans.detail);
 router.post("/plans/:id/likes", secure.isAuthenticated, plans.doLike);
-
 
 
 module.exports = router;

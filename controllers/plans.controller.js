@@ -2,6 +2,7 @@ const Plan = require("../models/plan.model");
 const mongoose = require("mongoose");
 const createError = require("http-errors");
 const User = require("../models/user.model");
+const interests = require("../constants/interests")
 
 
 module.exports.admin = (req, res, next) => {
@@ -66,3 +67,24 @@ module.exports.doLike = (req, res, next) => {
         .catch(error => next(error))
 }
 
+module.exports.create = (req, res, next) => {
+    console.log("INT4ERESES", interests)
+    res.render("plans/create", {
+        interests: interests
+    })
+};
+
+module.exports.doCreate = (req, res, next) => {
+    Plan.create(req.body)
+    .then(() => res.redirect('/')) 
+    .catch((error) => {
+        if (error instanceof mongoose.Error.ValidationError){
+            res.render('plans/create', {
+                plan:req.body,
+                errors:error.errors
+            })
+        } else {
+            next(error)
+        }
+    })
+}

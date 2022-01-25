@@ -3,9 +3,9 @@
 <img src= {{user.avatarUrl}} alt='avatarillo'>
 <h2> {{user.name}} </h2>
 <ul>
-{{#each users as |likes|}}
-       <li> {{likes}}: {{likes}}  
-
+{{#each user.likes as |plan|}}
+       <li>  
+              {{plan.title}}
        </li> 
     
 {{/each}}

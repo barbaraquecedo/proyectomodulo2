@@ -9,7 +9,7 @@ const secure = require("../middlewares/security.mid");
 router.get("/", misc.home);
 
 
-router.get("/users/:id", users.profile);
+router.get("/users/:id", secure.isAuthenticated, users.profile);
 
 // anadir middleware auth + admin, acciones controlador
 

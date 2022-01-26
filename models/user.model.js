@@ -47,6 +47,11 @@ const userSchema = new Schema({
         default: "https://i.pravatar.cc/300",
     },
 
+    age: {
+        type: Number,
+        require: true,
+    },
+
     interests: {
         type: [String],
         enum: interests

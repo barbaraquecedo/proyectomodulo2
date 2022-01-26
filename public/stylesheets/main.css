@@ -236,3 +236,58 @@ body {
     outline: none;
     padding: 0;
 }
+
+.avatar {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-top:200px;
+    justify-content: center;
+}
+
+.avatar img {
+    width: 300px;
+    height: 300px;
+    border-radius: 160px;
+    margin-top:-100px;
+    
+}
+
+
+.profile-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-name h2 {
+    font-size: 50px;
+    font-weight: 500px;
+}
+
+.profile-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 400px;
+}
+
+.custom-card-profile{
+    width: 250px;
+    font-size: 10px;
+}
+
+.custom-card-profile a {
+    width: 120px;
+    height: 35px;
+    font-size: 13px;
+    align-content: center;
+}
+
+
+#profile-container{
+box-shadow:  1px 3px 15px -1px rgb(0 0 0 / 20%);
+border-radius: 20px ;
+}

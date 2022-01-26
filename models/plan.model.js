@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const categories = require('../constants/interests')
 console.log(categories)
 
-const planSchema = new Schema ({
+const planSchema = new Schema({
     title: {
         type: String,
         require: [true, 'Title is required']
@@ -18,7 +18,7 @@ const planSchema = new Schema ({
     image: {
         type: String,
         //require: [true, 'An image is required']
-        default:'https://picsum.photos/300/?blur'
+        default: 'https://picsum.photos/300/?blur'
     },
 
     interests: {
@@ -31,8 +31,10 @@ const planSchema = new Schema ({
     },
 
     location: {
-        type: String,
-        require: [true, 'Location is required']
+        type: {
+            type: String
+        },
+        coordinates:[Number]
     },
 
     price: {
@@ -48,10 +50,12 @@ const planSchema = new Schema ({
 
     time: {
         type: String,
-        require: [true, 'A time is required'] 
+        require: [true, 'A time is required']
     }
 
-}, { timestamps:true })
+
+
+}, { timestamps: true })
 
 
 const Plan = mongoose.model('Plan', planSchema);

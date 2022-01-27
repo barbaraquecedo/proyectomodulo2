@@ -25,10 +25,7 @@ Plan.deleteMany({})
             location: faker.address.streetAddress(),
             price: 100,
             date: 'October 15, 1996 05:35:32',
-            time: {
-                hours: 15,
-                minutes: 30 
-            }
+            time: "15:30"
         })
     
         plan.save()
@@ -53,10 +50,7 @@ Plan.deleteMany({})
             location: faker.address.streetAddress(),
             price: 100,
             date: 'October 15, 1996 05:35:32',
-            time: {
-                hours: 15,
-                minutes: 30 
-            }
+            time: "15:30"
         })
     
         plan.save()
@@ -81,10 +75,7 @@ Plan.deleteMany({})
             location: faker.address.streetAddress(),
             price: 100,
             date: 'October 15, 1996 05:35:32',
-            time: {
-                hours: 15,
-                minutes: 30 
-            }
+            time: "15:30"
         })
     
         plan.save()
@@ -108,10 +99,7 @@ Plan.deleteMany({})
             location: faker.address.streetAddress(),
             price: 100,
             date: 'October 15, 1996 05:35:32',
-            time: {
-                hours: 15,
-                minutes: 30 
-            }
+            time: "15:30"
         })
     
         plan.save()

@@ -291,3 +291,27 @@ body {
 box-shadow:  1px 3px 15px -1px rgb(0 0 0 / 20%);
 border-radius: 20px ;
 }
+
+
+.footer{
+    width: auto;
+    height: 400px;
+    background-color: #248A65;
+    margin-top: 80px;
+}
+
+.footer-title h1{
+    margin-top: 10px;
+}
+
+#footer-groups{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+
+#footer-groups h4{
+    color: white;
+}

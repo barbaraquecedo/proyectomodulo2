@@ -12,7 +12,7 @@ body {
 #main-nav a {
     font-size: 16px;
     font-weight: 600;
-    
+    color: #248A65;
 }
 
 
@@ -63,7 +63,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 190px;
+    height: 145px;
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     position: relative;
@@ -75,7 +75,7 @@ body {
 }
 
 .btn-primary {
-    background-color: turquoise !important;
+    background-color: #248A65 !important;
 }
 
 .like-button-div {
@@ -171,7 +171,7 @@ body {
 }
 
 .btn {
-    font-size: 30px;
+    font-size: 16px;
     background-color: #40e0d0;
     color: white;
 }
@@ -288,10 +288,17 @@ body {
 
 
 #profile-container{
-box-shadow:  1px 3px 15px -1px rgb(0 0 0 / 20%);
-border-radius: 20px ;
+    box-shadow:  1px 3px 15px -1px rgb(0 0 0 / 20%);
+    border-radius: 20px ;
 }
 
+.navbar-light span#navbar-hamburguer.navbar-toggler-icon {
+    background-image: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
 
 .footer{
     width: auto;

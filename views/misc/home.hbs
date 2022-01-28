@@ -12,7 +12,7 @@
     <h1 class="mt-5 mb-5 font-weight-bold"> Descubre todo lo que puedes hacer </h1>
     <div class="row">
         {{#each plans as |plan|}}
-        <div class="custom-card col-xl-4 col-md-4 col-sm-6 col-xs-12  mb-4">
+        <div class="custom-card col-xl-3 col-md-4 col-sm-6 col-xs-12  mb-4">
             <div class="shadow-custom-card">
                 <div style="background-image: url('{{plan.image}}')" class="custom-card-img-top" alt="...">
                     {{#if ../currentUser}}
@@ -26,7 +26,7 @@
                 <div class="card-body custom-card-body">
                     <h5 class="card-title">{{ plan.title }}</h5>
                     <p class="card-text">pequeña descripcion del plan</p>
-                    <a href="/plans/{{ plan.id }}" class="btn btn-primary">VER MAS...</a>
+                    <a href="/plans/{{ plan.id }}" class="btn btn-primary">Ver más</a>
                 </div>
             </div>
         </div>

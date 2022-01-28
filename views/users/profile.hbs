@@ -39,3 +39,12 @@
               </div>
        </div>
 </div>
+
+
+{{#each user.likes as |plan|}}
+       <div class="slider">
+              <div class="slider-items">
+                     <img src="{{ plan.image}}" alt="">
+              </div>
+       </div>
+{{/each}}

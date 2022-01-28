@@ -296,7 +296,7 @@ border-radius: 20px ;
 .footer{
     width: auto;
     height: 400px;
-    background-color: #248A65;
+    background-color: darkslategray;
     margin-top: 80px;
 }
 
@@ -309,9 +309,16 @@ border-radius: 20px ;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 40px;
+    color: white;
 }
 
 
-#footer-groups h4{
+/* #footer-groups h4{
     color: white;
+} */
+
+
+.span-promenade{
+    color:#69c2d7;
+    font-weight: 700;
 }

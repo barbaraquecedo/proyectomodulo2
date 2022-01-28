@@ -10,10 +10,14 @@
   <div class="card-detail">
     <div class="row" id="card-detail-container">
       <div class="card-detail-image col-8" style="background-image: url('{{plan.image}}')" alt="image">
-        <div class="card-detail-like-btn">
-          <i class="fa fa-heart {{userLikes currentUser plan}}"></i>
+        {{#if currentUser}}
+        <div class="like-button-div">
+          <form action="/plans/{{plan.id}}/likes" method="post">
+            <button class="btn-unstylled" type="submit"><i
+                class="fa fa-heart {{userLikes currentUser plan}}  "></i></button>
+          </form>
         </div>
-       
+        {{/if}}
       </div>
       <div class="card-detail-info col-4">
         <div class="mt-3">

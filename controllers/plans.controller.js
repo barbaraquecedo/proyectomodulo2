@@ -68,7 +68,6 @@ module.exports.doLike = (req, res, next) => {
 }
 
 module.exports.create = (req, res, next) => {
-    console.log("INT4ERESES", interests)
     res.render("plans/create", {
         interests: interests
     })

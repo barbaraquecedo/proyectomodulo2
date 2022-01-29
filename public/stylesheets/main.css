@@ -303,7 +303,7 @@ body {
 .footer{
     width: auto;
     height: 400px;
-    background-color: #248A65;
+    background-color: darkslategray;
     margin-top: 80px;
 }
 
@@ -316,11 +316,28 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 40px;
-}
-
-
-#footer-groups h4{
     color: white;
-
 }
 
+
+/* #footer-groups h4{
+    color: white;
+} */
+
+
+.span-promenade{
+    color:#69c2d7;
+    font-weight: 700;
+}
+
+.company-items small{
+    margin-top: 10px ;
+}
+
+.company-items a{
+    margin-top: 10px ;
+}
+
+.home-btn{
+    color: white;
+}

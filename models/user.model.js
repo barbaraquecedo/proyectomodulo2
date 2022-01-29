@@ -60,6 +60,11 @@ const userSchema = new Schema({
     likes: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Plan'
+    }],
+
+    pays: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Plan'
     }]
 
 

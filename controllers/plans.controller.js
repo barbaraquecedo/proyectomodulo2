@@ -42,26 +42,54 @@ module.exports.doLike = (req, res, next) => {
                 next(createError(404, 'Plan not found'))
             } else {
                 return User.findByIdAndUpdate(
-                    req.user.id, 
-                    [{ 
-                        $set: { 
+                    req.user.id,
+                    [{
+                        $set: {
                             likes: {
-                                $cond: { 
-                                    if: { $in: [plan.id, "$likes"]},
-                                    then: { $setDifference: ["$likes", [plan.id]]},
-                                    else: { $concatArrays: ["$likes", [plan.id]]},
+                                $cond: {
+                                    if: { $in: [plan.id, "$likes"] },
+                                    then: { $setDifference: ["$likes", [plan.id]] },
+                                    else: { $concatArrays: ["$likes", [plan.id]] },
                                 }
 
                             }
                         }
-                    }], 
-                    { runValidators: true,  new: true } 
+                    }],
+                    { runValidators: true, new: true }
                 )
-                .then(user => {
-                    console.log(user)
-                    res.redirect("/")
-                })
+                    .then(user => {
+                        console.log(user)
+                        res.redirect("/")
+                    })
 
+            }
+        })
+        .catch(error => next(error))
+}
+
+module.exports.doPay = (req, res, next) => {
+    Plan.findById(req.params.id)
+        .then(plan => {
+            if (!plan) {
+                next(createError(404, 'Plan not found'))
+            } else {
+                return User.findByIdAndUpdate(
+                    req.user.id,
+                    [{
+                        $set: {
+                            pays: {
+                                $cond: {
+                                    if: { $in: [plan.id, "$pays"] },
+                                    then: { $setDifference: ["$pays", [plan.id]] },
+                                    else: { $concatArrays: ["$pays", [plan.id]] }
+                                }
+                            }
+                        }
+                    }],
+                    { runValidators: true, new: true }
+                    ).then(user => {
+                        res.redirect("/")
+                    })
             }
         })
         .catch(error => next(error))
@@ -75,15 +103,15 @@ module.exports.create = (req, res, next) => {
 
 module.exports.doCreate = (req, res, next) => {
     Plan.create(req.body)
-    .then(() => res.redirect('/')) 
-    .catch((error) => {
-        if (error instanceof mongoose.Error.ValidationError){
-            res.render('plans/create', {
-                plan:req.body,
-                errors:error.errors
-            })
-        } else {
-            next(error)
-        }
-    })
+        .then(() => res.redirect('/'))
+        .catch((error) => {
+            if (error instanceof mongoose.Error.ValidationError) {
+                res.render('plans/create', {
+                    plan: req.body,
+                    errors: error.errors
+                })
+            } else {
+                next(error)
+            }
+        })
 }

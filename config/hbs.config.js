@@ -1,3 +1,4 @@
+const { hashSync } = require("bcryptjs");
 const hbs = require("hbs");
 hbs.registerPartials(`${__dirname}/../views/partials`);
 
@@ -15,6 +16,15 @@ hbs.registerHelper('formatFullDate', (date, options) => {
 hbs.registerHelper('userLikes', (user, plan) => {
   if(user.likes.includes(plan.id)){
     return "text-danger"
+  } else {
+    return ""
+  }
+})
+
+
+hbs.registerHelper('planPays', (user, plan) => {
+  if(user.pays.includes(plan.id)){
+    return "text"
   } else {
     return ""
   }

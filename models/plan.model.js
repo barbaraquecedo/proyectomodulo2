@@ -31,10 +31,8 @@ const planSchema = new Schema({
     },
 
     location: {
-        type: {
-            type: String
-        },
-        coordinates:[Number]
+        type: String,
+        require: [true]
     },
 
     price: {

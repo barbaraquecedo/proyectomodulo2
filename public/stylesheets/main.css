@@ -348,13 +348,13 @@ body {
 .slick-next:before {
   color: rgba(0, 0, 0, 0.1);
   font-size: 40px;
-  color: white;
+  color: #248A65;
 }
 
 
 .slick-prev {
   z-index: 10;
-  left:20px !important;
+  left:5px !important;
 }
 
 .slick-next {
@@ -376,5 +376,13 @@ body {
 }
 
 
+.pay-btn{
+    display: flex;
+    justify-content: end;
+}
 
-
+.pay-btn button {
+    margin-bottom: 200px;
+    margin-right: 200px;
+    width: 200px;
+}

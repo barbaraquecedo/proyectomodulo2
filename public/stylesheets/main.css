@@ -341,3 +341,37 @@ body {
 .home-btn{
     color: white;
 }
+
+
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 40px;
+  color: white;
+}
+
+
+.slick-prev {
+  z-index: 10;
+  left:20px !important;
+}
+
+.slick-next {
+  z-index: 10;
+  right:20px !important;
+}
+
+.content-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .content-nav-wrapper {
+        display: block;
+    }
+}
+

@@ -329,3 +329,15 @@ body {
     color:#69c2d7;
     font-weight: 700;
 }
+
+.company-items small{
+    margin-top: 10px ;
+}
+
+.company-items a{
+    margin-top: 10px ;
+}
+
+.home-btn{
+    color: white;
+}

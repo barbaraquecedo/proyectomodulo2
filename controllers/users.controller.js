@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 const createError = require('http-errors');
 
 
+
+module.exports.admin = (req, res, next) => {
+    res.send('solo los administradores tienen acceso')
+};
+
+
 module.exports.profile = (req, res, next) => {
     User.findById(req.user.id)
     .populate('likes')

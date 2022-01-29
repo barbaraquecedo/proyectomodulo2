@@ -22,7 +22,7 @@ hbs.registerHelper('userLikes', (user, plan) => {
 })
 
 
-hbs.registerHelper('planPays', (user, plan) => {
+hbs.registerHelper('userPays', (user, plan) => {
   if(user.pays.includes(plan.id)){
     return "text"
   } else {

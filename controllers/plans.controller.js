@@ -3,11 +3,8 @@ const mongoose = require("mongoose");
 const createError = require("http-errors");
 const User = require("../models/user.model");
 const interests = require("../constants/interests")
+//const { sendVerificationEmail } = require("./mailer.config");
 
-
-module.exports.admin = (req, res, next) => {
-    res.send('solo los administradores tienen acceso')
-};
 
 module.exports.list = (req, res, next) => {
 
@@ -32,6 +29,10 @@ module.exports.detail = (req, res, next) => {
 
         })
         .catch((error) => next(error))
+}
+
+module.exports.pay = (req, res, next) => {
+    res.render("plans/pay")
 }
 
 
@@ -88,7 +89,7 @@ module.exports.doPay = (req, res, next) => {
                     }],
                     { runValidators: true, new: true }
                     ).then(user => {
-                        res.redirect("/")
+                        res.redirect("/pay")
                     })
             }
         })

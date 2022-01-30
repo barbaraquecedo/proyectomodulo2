@@ -12,6 +12,7 @@ module.exports.admin = (req, res, next) => {
 module.exports.profile = (req, res, next) => {
     User.findById(req.user.id)
     .populate('likes')
+    .populate('pays')
     .then((user) => {
         if (user) { 
             res.render('users/profile', {user})

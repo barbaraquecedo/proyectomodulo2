@@ -1,49 +1,51 @@
-<nav class="navbar navbar-default navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+<nav id="nav-color"class="navbar navbar-default navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/" id="bg-logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon" id="navbar-hamburguer">
-      <i class="fa fa-bars"></i> 
+      <i class="fa fa-bars"></i>
     </span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <div class="content-nav-wrapper">
 
-    
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right me-3">
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/users/profile">{{currentUser.email}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/logout">
-          <i class="fa fa-sign-out"></i>
-        </a>
-      </li>
-      <li class="nav-item" style="text-decoration: underline;">
-          <a class="nav-link" aria-current="page" href="/login">
-            Iniciar sesion 
-          </a>    
-      </li>
-      <li class="nav-item">
-        <button type="button" class="btn btn-primary navbar-btn">
-          <a href="/register">
-          <span class="glyphicon glyphicon-plus"></span></a>
-          Crear cuenta
-        </button>
-      </li>
-    </ul>
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <h1><span style="color: white">My</span> <span class="span-promenade">Promenade</span></h1>
+      </ul>
+      <ul class="nav navbar-nav navbar-right me-3">
+        {{#if currentUser}}
+           <li class="nav-item">
+          <p>{{cuurentUser.email}}</p>
+        </li>
+         <li class="nav-item">
+          <a href="/users/profile"> <img class="img-nav" src="{{currentUser.avatarUrl}}" alt=""> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/logout">
+            <i class="fa fa-sign-out"></i>
+          </a>
+        </li>
+        {{else}}
+        <li class="nav-item" style="text-decoration: underline;">
+           <button type="button" id="nav-button" class="btn btn-primary navbar-btn">
+            <a class="nav-link" aria-current="page" href="/login">
+              Iniciar sesion
+            </a>
+          </button>
+        </li>
+        <li class="nav-item"  style="text-decoration: underline;">
+          <button type="button" id="nav-button" class="btn btn-primary navbar-btn">
+            <a class="nav-link" aria-current="page" href="/register">
+              Crear cuenta
+            </a>
+          </button>
+
+        </li>
+        {{/if}}
+      </ul>
     </div>
   </div>
 </nav>

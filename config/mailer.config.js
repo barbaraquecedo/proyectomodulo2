@@ -1,3 +1,4 @@
+require("dotenv").config();
 const nodemailer = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
@@ -13,11 +14,11 @@ module.exports.sendVerificationPay = (user) => {
     .sendMail({
       from: `Proyecto 2 👻 <${process.env.MAIL_ACCOUNT}>`,
       to: user.email,
-      subject: "Please verify your account",
+      subject: "Por favor realice el pago de su plan",
       html: `
         <h1>Hello ${user.name}!</h2>
         <p>Welcome to Express Contacts. Please verify your account</p>
-        <a href="http://${process.env.APP_URL}/users/${user.id}/verify">
+        <a href="http://${process.env.APP_URL}/users/${user.id}/pay">
             Verify email
         </a>
       `,

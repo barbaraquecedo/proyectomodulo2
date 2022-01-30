@@ -49,7 +49,13 @@ const planSchema = new Schema({
     time: {
         type: String,
         require: [true, 'A time is required']
-    }
+    },
+
+    emailPay: {
+        type: Boolean,
+        default: false,
+      },
+    
 
 
 

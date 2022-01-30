@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const createError = require("http-errors");
 const User = require("../models/user.model");
 const interests = require("../constants/interests")
-//const { sendVerificationEmail } = require("./mailer.config");
+
+const { sendVerificationEmail } = require("../config/mailer.config");
+
 
 
 module.exports.list = (req, res, next) => {
@@ -32,7 +34,7 @@ module.exports.detail = (req, res, next) => {
 }
 
 module.exports.pay = (req, res, next) => {
-    res.render("plans/pay")
+    res.render("plans/pays")
 }
 
 
@@ -115,4 +117,12 @@ module.exports.doCreate = (req, res, next) => {
                 next(error)
             }
         })
+}
+
+module.exports.verify= (req, res, next) => {
+    Plan.findByIdAndUpdate(req.params.id, { emailPay: true})
+    .then((plan) =>{
+        res.redirect("/")
+    })
+    .catch(next)
 }

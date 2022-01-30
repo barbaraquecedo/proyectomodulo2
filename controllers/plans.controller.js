@@ -4,7 +4,7 @@ const createError = require("http-errors");
 const User = require("../models/user.model");
 const interests = require("../constants/interests")
 
-const { sendVerificationEmail } = require("../config/mailer.config");
+const {sendVerificationEmail } = require("../config/mailer.config");
 
 
 
@@ -91,7 +91,7 @@ module.exports.doPay = (req, res, next) => {
                     }],
                     { runValidators: true, new: true }
                     ).then(user => {
-                        res.redirect("/pay")
+                        res.redirect("/users/profile")
                     })
             }
         })

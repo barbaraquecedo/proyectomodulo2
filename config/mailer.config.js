@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-module.exports.sendVerificationPay = (user) => {
+module.exports.sendVerificationEmail = (user) => {
   transporter
     .sendMail({
       from: `Proyecto 2 👻 <${process.env.MAIL_ACCOUNT}>`,

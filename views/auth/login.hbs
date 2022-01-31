@@ -1,32 +1,32 @@
 {{errors}}
-<h1>LOGIN</h1>
-<div class="container">
+
+
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-4">
+      <h1 class="mb-5 mt-5">Bienvenido de nuevo</h1>
     <form action="/login" method="post">
+    <label class="form-label">Email</label>
+      <div class="input-group mb-1">
+        <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+        <input type="text" class="form-control {{#if errors.email}}is-invalid{{/if}}" name="email"
+          value="{{ user.email }}" placeholder="example@example.org" />
+        <div class="invalid-feedback">{{ errors.email }}</div>
+      </div>
 
-        <div class="col-xs-4 col-xs-offset-4">
-            <label class="form-label">Email</label>
-            <div class="input-group mb-1">
-                <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
-                <input type="text" class="form-control {{#if errors.email}}is-invalid{{/if}}" name="email"
-                    value="{{ user.email }}" placeholder="example@gmail.com" />
-                <div class="invalid-feedback">{{ errors.email }}</div>
-            </div>
-        </div>
-        <div class="col-xs-4 col-xs-offset-4">
-            <label class="form-label">Contrasena</label>
-            <div class="input-group mb-1">
-                <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
-                <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}"  name="password"
-                    placeholder="password" />
-                <div class="invalid-feedback">{{ errors.password }}</div>
-            </div>
-        </div>
+    <label class="form-label">Contraseña</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+        <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" name="password"
+          placeholder="Password..." />
+        <div class="invalid-feedback">{{ errors.password }}</div>
+      </div>
 
-        <div class="d-grid">
-            <button type="submit" class="btn btn-primary text-uppercase btn-sm">Iniciar sesión</button>
-            <hr>
-            <a href="/register" class="btn btn-secondary btn-sm ">Crear cuenta</a>
-        </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-sm text-uppercase">Iniciar sesion</button>
+        <hr>
+        <a href="/register" class="btn btn-secondary btn-sm text-uppercase">Crear cuenta</a>
+      </div>
 
     </form>
+  </div>
 </div>

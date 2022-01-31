@@ -7,17 +7,12 @@ const PASSWORD_PATTERN = /.{8,}/;
 const SALT_WORK_FACTOR = 10;
 
 
-const interests = ["forest", "branch", "cinema"]
+const interests = ["forest", "branch", "cinema", "city"]
 
 const userSchema = new Schema({
     name: {
         type: String,
         required: [true, "Name is required"],
-    },
-
-    administrator : {
-        type: Boolean,
-        default: false
     },
 
     surname: {
@@ -56,6 +51,12 @@ const userSchema = new Schema({
         type: [String],
         enum: interests
     },
+
+    admin : {
+        type: Boolean,
+        default: false,
+    },
+
 
     likes: [{
         type: mongoose.Schema.Types.ObjectId,

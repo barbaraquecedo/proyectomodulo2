@@ -12,6 +12,7 @@ router.get("/", misc.home);
 router.get("/users/:id", secure.isAuthenticated, users.profile);
 
 // anadir middleware auth + admin, acciones controlador
+router.get("/admin", secure.isAdmin, users.admin)
 
 router.get("/register", auth.register);
 router.post("/register", auth.doRegister);
@@ -19,8 +20,8 @@ router.get("/login", auth.login);
 router.post("/login", auth.doLogin);
 router.get("/logout", auth.logout);
 
-router.get("/plans/create", secure.isAdmin, secure.isAuthenticated, plans.create);
-router.post("/plans/create", secure.isAdmin, secure.isAuthenticated,plans.doCreate);
+router.get("/plans/create",  secure.isAuthenticated, plans.create);
+router.post("/plans/create",  secure.isAuthenticated,plans.doCreate);
 router.get("/pay", plans.pay)
 //router.post("/plans/pay", plans.doPay)
 router.get("/plans/:id", plans.detail);

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const categories = require('../constants/interests')
-console.log(categories)
+
 
 const planSchema = new Schema({
     title: {

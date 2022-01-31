@@ -1,4 +1,4 @@
-const { hashSync } = require("bcryptjs");
+
 const hbs = require("hbs");
 hbs.registerPartials(`${__dirname}/../views/partials`);
 
@@ -28,5 +28,11 @@ hbs.registerHelper('userPays', (user, plan) => {
   } else {
     return ""
   }
+})
+
+
+hbs.registerHelper('forestInterest', (interests, options) => {
+  let array = interests.toString().split(' ');
+  return ` ${array[0].replace(/,/g, '')}`;
 })
 

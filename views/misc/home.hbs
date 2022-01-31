@@ -7,6 +7,42 @@
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <section>
+            <h1 class="mt-5 mb-5 font-weight-bold">Que tipo de plan estas buscando {{currentUser.name}}?</h1>
+            <p>Busca el tipo de plan que mas se ajusta a tus necesidades utilizando las categorias disponibles</p>
+            <h1 class="mt-5 mb-5 font-weight-bold">Todas las categorias</h1>
+            <div>
+                <div class="container mt-5 ">
+              <div class="row">
+                     <div class="categories-plans">
+                            {{#each plans as |plan|}}
+                          
+                                   <div class="custom-card-profile col-xl-4 col-md-4 col-sm-6 col-xs-12  mb-4 px-3">
+                                          <div class="shadow-custom-card">
+                                                 <div style="background-image: url('{{plan.image}}')"
+                                                        class="custom-card-img-top" alt="...">
+                                                 </div>
+                                                 <div class="card-body custom-card-body">
+                                                        <h5 class="card-title">{{ plan.interests}}</h5>
+                                                        <p class="card-text">pequeña descripcion del plan</p>
+                                                        
+                                                 </div>
+                                          </div>
+                                   </div>
+                           
+                            {{/each}}
+                     </div>
+              </div>
+
+       </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+
 
 <div class="container mt-5 ">
     <h1 class="mt-5 mb-5 font-weight-bold"> Descubre todo lo que puedes hacer </h1>
@@ -25,6 +61,7 @@
                 </div>
                 <div class="card-body custom-card-body">
                     <h5 class="card-title">{{ plan.title }}</h5>
+                    <h5 class="card-title">{{ plan.interests}}</h5>
                     <p class="card-text">pequeña descripcion del plan</p>
                     <a href="/plans/{{ plan.id }}" class="btn btn-primary">Ver más</a>
                 </div>

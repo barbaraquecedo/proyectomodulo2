@@ -1,6 +1,6 @@
 require("../config/db.config")
 
-const { fake } = require("faker")
+
 const faker = require('faker')
 const Plan = require("../models/plan.model")
 const forestIds = [10,103,1006,1015,1016,1020,1023,1039,1043,11,116,128,17,190,216,229,287,289]

@@ -31,8 +31,5 @@ hbs.registerHelper('userPays', (user, plan) => {
 })
 
 
-hbs.registerHelper('forestInterest', (interests, options) => {
-  let array = interests.toString().split(' ');
-  return ` ${array[0].replace(/,/g, '')}`;
-})
+
 

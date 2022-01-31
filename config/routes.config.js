@@ -20,8 +20,8 @@ router.get("/login", auth.login);
 router.post("/login", auth.doLogin);
 router.get("/logout", auth.logout);
 
-router.get("/plans/create",  secure.isAuthenticated, plans.create);
-router.post("/plans/create",  secure.isAuthenticated,plans.doCreate);
+router.get("/plans/create",  secure.isAuthenticated, secure.isAdmin, plans.create);
+router.post("/plans/create",  secure.isAuthenticated, secure.isAdmin, plans.doCreate);
 router.get("/pay", plans.pay)
 //router.post("/plans/pay", plans.doPay)
 router.get("/plans/:id", plans.detail);

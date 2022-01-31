@@ -1,4 +1,4 @@
-<nav id="nav-color"class="navbar navbar-default navbar-expand-lg navbar-light bg-light">
+<nav id="nav-color" class="navbar navbar-default navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/" id="bg-logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,9 +13,12 @@
 
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a href="/"><h1><span style="color: white">My</span> <span class="span-promenade">Promenade</span></h1></a>
+          <a href="/">
+            <h1><span style="color: white">My</span> <span class="span-promenade">Promenade</span></h1>
+          </a>
       </ul>
-      <ul class="nav navbar-nav navbar-right me-3">
+      <ul class="nav navbar-nav navbar-right me-3 mt-3">
+
         <li class="nav-item">
           <a id="logout" class="nav-link" aria-current="page" href="/">Home</a>
         </li>
@@ -23,21 +26,27 @@
         <li class="nav-item">
           <a id="logout" class="nav-link" aria-current="page" href="/logout">Logout</a>
         </li>
-           <li class="nav-item">
-          <p>{{cuurentUser.email}}</p>
+          {{#if currentUser.admin}}
+          <li class="nav-item" style="text-decoration: underline;">
+           <button type="button" id="nav-button" class="btn btn-primary navbar-btn">
+            <a class="nav-link" aria-current="page" href="/plans/create">
+              Crear plan
+            </a>
+          </button>
         </li>
-         <li class="nav-item">
+        {{/if}}
+        <li class="nav-item">
           <a href="/users/profile"> <img class="img-nav" src="{{currentUser.avatarUrl}}" alt=""> </a>
         </li>
         {{else}}
         <li class="nav-item" style="text-decoration: underline;">
-           <button type="button" id="nav-button" class="btn btn-primary navbar-btn">
+          <button type="button" id="nav-button" class="btn btn-primary navbar-btn">
             <a class="nav-link" aria-current="page" href="/login">
               Iniciar sesion
             </a>
           </button>
         </li>
-        <li class="nav-item"  style="text-decoration: underline;">
+        <li class="nav-item" style="text-decoration: underline;">
           <button type="button" id="nav-button" class="btn btn-primary navbar-btn">
             <a class="nav-link" aria-current="page" href="/register">
               Crear cuenta

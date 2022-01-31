@@ -371,7 +371,7 @@ body {
 }
 
 @media (max-width: 992px) {
-    .content-nav-wrapper {
+    .content-nav-wrapper .login {
         display: block;
     }
 }
@@ -487,4 +487,21 @@ body {
     border: solid 3px #248A65;
     float: left;
     margin: 10px;
+}
+
+#btn-login{
+    justify-content: center;
+}
+
+#title-reg{
+    text-align: center;
+}
+
+
+#form-categories{
+    margin-right: 30px;
+}
+
+#span-categories{
+    margin-right: 20px;
 }

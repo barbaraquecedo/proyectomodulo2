@@ -24,7 +24,7 @@ module.exports.detail = (req, res, next) => {
     Plan.findById(req.params.id)
         .then((plan) => {
             if (plan) {
-                res.render("plans/detail", { plan})
+                res.render("plans/detail", {plan})
             } else {
                 next(createError(404, 'User not found'))
             }

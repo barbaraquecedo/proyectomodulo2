@@ -13,28 +13,15 @@
             <h1 class="mt-5 mb-5 font-weight-bold">Que tipo de plan estas buscando {{currentUser.name}}?</h1>
             <p>Busca el tipo de plan que mas se ajusta a tus necesidades utilizando las categorias disponibles</p>
             <h1 class="mt-5 mb-5 font-weight-bold">Todas las categorias</h1>
-                 {{#each interests as |interest|}}
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{interest}}" name="{{interest}}"
-                                id="flexCheckChecked">
-                            <label class="form-check-label" for="flexCheckChecked">
-                                {{interest}}
-                            </label>
+                    {{#each interests as |interest|}}
+                        <div class="row">
+                            <div class=" group-categories">
+                                <div class="categories-plans">
+                                    <div class="categories-box">{{interest}}</div>
+                                </div>
+                            </div>
                         </div>
-                        {{/each}}
-
-            <div class="row">
-                <div class=" group-categories">
-                    <div class="categories-plans">
-                        <div class="categories-box">Forest</div>
-                        <div class="categories-box" >Brunch</div>
-                        <div class="categories-box" >City</div>
-                        <div class="categories-box" >Cinema</div>
-                    </div>
-                </div>
-            </div>
-
-
+                    {{/each}}
 
     </div>
     </section>

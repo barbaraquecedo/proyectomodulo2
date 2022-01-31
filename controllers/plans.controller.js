@@ -12,7 +12,7 @@ module.exports.list = (req, res, next) => {
 
     Plan.find()
         .then((plans) => {
-            res.render("misc/home", { plans, interests })
+            res.render("misc/home", { plans })
         })
         .catch((error) => {
             next(error)

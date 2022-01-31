@@ -411,7 +411,7 @@ body {
 
 
 #nav-color{
-    background: linear-gradient(70deg,#76A997, white);
+    background: linear-gradient(70deg, #248A65, white);
 }
 
 /* #bg-logo{
@@ -438,7 +438,7 @@ body {
 
 .footer-logo{
     background: url(./../img/Sin\ título-2.png);
-    width: 50%;
+    width: 60%;
     height: 300px;
     background-size: cover;
     background-position: center;

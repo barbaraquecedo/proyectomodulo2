@@ -53,7 +53,12 @@ const userSchema = new Schema({
         enum: interests
     },
 
-    admin : {
+    verified: {
+        type: Boolean,
+        default: false,
+    },
+
+    admin: {
         type: Boolean,
         default: false,
     },
@@ -66,7 +71,7 @@ const userSchema = new Schema({
 
     pays: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'Plan'
+        ref: 'Plan'
     }]
 
 

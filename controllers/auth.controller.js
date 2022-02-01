@@ -1,7 +1,7 @@
 const createError = require("http-errors");
 const User = require("../models/user.model");
 const mongoose = require("mongoose");
-//const { sendVerificationEmail } = require("./mailer.config");
+const { sendVerificationEmail } = require("../config/mailer.config");
 
 
 module.exports.register = (req, res, next) => {
@@ -22,7 +22,7 @@ module.exports.doRegister = (req, res, next) => {
                 
                 console.log('entro en then del find', req.body)
                 return User.create(req.body)
-                    .then(() => {
+                    .then((user) => {sendVerificationEmail(user)
                         console.log('entro en then de create')
                         res.redirect("/login")
                     })
@@ -42,26 +42,34 @@ module.exports.doRegister = (req, res, next) => {
 }
 
 module.exports.login = (req, res, next) => {
-    res.render('auth/login')
+    res.render("auth/login")
 };
 
+module.exports.verify = (req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, { verified: true })
+      .then((user) => {
+        res.redirect("/login");
+      })
+      .catch(next);
+  };
+  
 
 module.exports.doLogin = (req, res, next) => {
     function renderWithErrors() {
         res.render("auth/login", {
             user: req.body,
-            erros: { password: 'email or password incorrect' }
-        })
+            errors: { password: 'email or password incorrect' },
+        });
     }
     const { email, password } = req.body
 
-    User.findOne({ email })
+    User.findOne({ email, verified: true })
         .then((user) => {
             if (!user) {
                 renderWithErrors()
             } else {
                 return user.checkPassword(password)
-                    .then(match => {
+                    .then((match) => {
 
                         if (!match) {
                             console.log('ESTA MAL LA CONTRASEÑA FRAN, TE MATO!')

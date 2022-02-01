@@ -265,6 +265,12 @@ body {
     align-items: center;
 }
 
+.admin-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-name h2 {
     font-size: 50px;
     font-weight: 500px;
@@ -411,14 +417,14 @@ body {
 .img-nav {
     border: solid;
     border-radius: 100%;
-    border-color: #248A65;
+    border-color: #98e6c9;
     width: 70px;
     margin-right: 110px;
 }
 
 
 #nav-color {
-    background: linear-gradient(70deg, #248A65, white);
+    background: linear-gradient(70deg, #2F4F4F, #7dc2a8);
 }
 
 /* #bg-logo{

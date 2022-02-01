@@ -4,7 +4,7 @@ const createError = require("http-errors");
 const User = require("../models/user.model");
 const interests = require("../constants/interests")
 
-const {sendVerificationEmail } = require("../config/mailer.config");
+const { sendVerificationEmail } = require("../config/mailer.config");
 
 
 
@@ -24,7 +24,7 @@ module.exports.detail = (req, res, next) => {
     Plan.findById(req.params.id)
         .then((plan) => {
             if (plan) {
-                res.render("plans/detail", {plan})
+                res.render("plans/detail", { plan })
             } else {
                 next(createError(404, 'User not found'))
             }
@@ -70,6 +70,8 @@ module.exports.doLike = (req, res, next) => {
         .catch(error => next(error))
 }
 
+
+
 module.exports.doPay = (req, res, next) => {
     Plan.findById(req.params.id)
         .then(plan => {
@@ -90,9 +92,9 @@ module.exports.doPay = (req, res, next) => {
                         }
                     }],
                     { runValidators: true, new: true }
-                    ).then(user => {
-                        res.redirect("/users/profile")
-                    })
+                ).then(user => {
+                    res.redirect("/users/profile")
+                })
             }
         })
         .catch(error => next(error))
@@ -119,10 +121,22 @@ module.exports.doCreate = (req, res, next) => {
         })
 }
 
-module.exports.verify= (req, res, next) => {
-    Plan.findByIdAndUpdate(req.params.id, { emailPay: true})
+module.exports.delete = (req, res, next ) => {
+    Plan.findByIdAndDelete(req.params.id)
     .then((plan) =>{
-        res.redirect("/")
+        if(plan){
+            res.redirect("/")
+        }else{
+            next(createError(404, "Plan not foud"))
+        }
     })
-    .catch(next)
+    .catch((error) => next(error));
+}
+
+module.exports.verify = (req, res, next) => {
+    Plan.findByIdAndUpdate(req.params.id, { emailPay: true })
+        .then((plan) => {
+            res.redirect("/")
+        })
+        .catch(next)
 }

@@ -23,7 +23,7 @@ const userSchema = new Schema({
 
     email: {
         type: String,
-        required: [true, "email is reuquired"],
+        required: [true, "email is required"],
         match: [EMAIL_PATTERN, "email is not valid"],
         trim: true,
         lowercase: true,

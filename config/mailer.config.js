@@ -32,4 +32,24 @@ module.exports.sendVerificationEmail = (user) => {
 };
 
 
+// module.exports.sendVerificationPay = (plan) => {
+//   transporter
+//     .sendMail({
+//       from: `My promenade   🍽️   🍸   🥐<${process.env.MAIL_ACCOUNT}>`,
+//       to: user.email,
+//       subject: "Por favor verifica tu copmra",
+//       html: `
+//         <h1><span style="color: blue">My</span> <span class="span-promenade">Promenade</span></h1>
+//         <h1>Hola ${user.name}!</h2>
+        
+//       `,
+//     })
+//     .then(() => {
+//       console.log("email sent!");
+//     })
+//     .catch(() => {
+//       console.error("error sending email");
+//     });
+// };
+
 

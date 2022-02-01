@@ -107,19 +107,19 @@ module.exports.create = (req, res, next) => {
 };
 
 module.exports.doCreate = (req, res, next) => {
-    Plan.create(req.body)
-        .then(() => res.redirect('/'))
-        .catch((error) => {
-            if (error instanceof mongoose.Error.ValidationError) {
-                res.render('plans/create', {
-                    plan: req.body,
-                    errors: error.errors
-                })
-            } else {
-                next(error)
-            }
-        })
-}
+Plan.create(req.body)
+.then(() => res.redirect("/"))
+.catch((error) => {
+  if (error instanceof mongoose.Error.ValidationError) {
+    res.render("plans/create", {
+      contact: req.body,
+      errors: error.errors,
+    });
+  } else {
+    next(error);
+  }
+});
+};
 
 module.exports.delete = (req, res, next ) => {
     Plan.findByIdAndDelete(req.params.id)

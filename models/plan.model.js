@@ -51,7 +51,7 @@ const planSchema = new Schema({
         require: [true, 'A time is required']
     },
 
-    emailPay: {
+    verifiedPay: {
         type: Boolean,
         default: false,
       },

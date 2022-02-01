@@ -48,9 +48,11 @@
       </div>
       {{/if}}
       {{#if currentUser.admin}}
-      <form action="/plans/{{plan.id}}/delete" method="POST">
-        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-      </form>
+      <div class="btn-trash">
+        <form action="/plans/{{plan.id}}/delete" method="POST">
+          <button type="submit" class="btn btn-sm"><i class="fa fa-trash"></i></button>
+        </form>
+      </div>
       {{/if}}
     </div>
 
